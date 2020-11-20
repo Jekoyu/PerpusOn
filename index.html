@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+   
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body> 
+   <div class="container-md">
+       <div class="container-fluid">
+            <div class="row">
+                <!-- <div class="text-center">     -->
+                        <nav class="navbar navbar-light bg-primary justify-content-center mt-4 ">    
+                            <div class="center">   
+                                <div class="nav-item">S ' Kepo</div>
+                            </div>
+                        </nav>
+                                
+                        <div class="flipbook mt-2" id="flipbook">
+                            <div class="page">
+                                <img src="../images/MADIG.jpg " class="img-fluid mx-auto d-block" alt="ress">
+                            </div>
+                            <div class="page">
+                                <img src="../images/2.jpg" alt="" class="img-fluid  mx-auto d-block">
+                            </div>
+                            <div class="page">
+                                <img src="../images/3.jpg" class="img-fluid  mx-auto d-block" alt="">
+                            </div>
+                            <div class="page">
+                                <img src="../images/4.jpg" class="img-fluid  mx-auto d-block" alt="">
+                            </div>
+                            <div class="page">
+                                <img src="../images/5.jpg" class="img-fluid  mx-auto d-block" alt="">
+                            </div>
+                            <div class="page">
+                                <img src="../images/6.jpg" class="img-fluid  mx-auto d-block" alt="">
+                            </div>
+                            <div class="page">
+                                <img src="../images/7.jpg" class="img-fluid  mx-auto d-block" alt="">
+                            </div>
+                            <div class="page">
+                                <img src="../images/8.jpg" class="img-fluid  mx-auto d-block" alt="">
+                            </div>
+                            <div class="page">
+                                <img src="../images/9.jpg" class="img-fluid  mx-auto d-block" alt="">
+                            </div>
+                            <div class="page">
+                                <img src="../images/10.jpg" class="img-fluid  mx-auto d-block" alt="">
+                            </div>
+                        </div>
+                        <div class="nav justify-content-center mt-2">    
+                            <div class="center">   
+                                <button id="first" class="btn btn-light">
+                                <i class="fas fa-angle-double-left"></i>
+                                </button>
+                                <button id="back" name="back" class="btn btn-light">
+                                <i class="fas fa-angle-left"></i>
+                                </button>
+                                <button id="next" name="next" class="btn btn-light">
+                                <i class="fas fa-angle-right"></i>
+                                </button>
+                                <button id="last" name="last" class="btn btn-light">
+                                <i class="fas fa-angle-double-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                       
+                  
+
+                </div>
+            </div>
+       </div>
+   </div>
+
+   <script type="text/javascript" src="lib/jquery.js"></script>
+   <script type="text/javascript" src="lib/turn.min.js"></script>
+   <script src="script.js"></script>
+    
+    <script type="text/javascript"> 
+    
+         const height =  $('.page').height()+5;
+
+         function checkMobile() {
+         return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+         }
+
+        // if (!checkMobile()) { // not mobile
+        //     $('.flipbook').turn({
+        //         display:double,
+        //         height:height
+        //     })
+        // }
+        // else {
+        //     $('.flipbook').turn('display', 'single');
+        // }
+
+        //  $(window).resize(()=>{
+        //      console.log($(window).width());
+        //      if($(window).width() >750){
+        //         $('.flipbook').turn({
+        //             acceleration:true,
+        //             duration:1300,
+        //             display:'double',
+        //             gradient:true,
+        //             height:height
+        //         })
+
+        //      }
+
+            //  if($(window).width()< 750){
+
+            //     $('.flipbook').turn({
+            //         acceleration:true,
+            //         duration:1300,
+            //         display:'single',
+            //         gradient:true,
+            //         height:height
+            //     })
+            //  }
+
+             
+        //  })
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                $('.flipbook').turn({
+                    acceleration:true,
+                    duration:1300,
+                    display:'single',
+                    gradient: true,
+                    height: height
+
+                });
+
+            } else {
+                $('.flipbook').turn({
+                acceleration:true,
+                duration:1300,
+                display:'double',
+                gradient: true,
+                height: height
+
+            });
+
+            }
+            }
+
+            var x = window.matchMedia("(max-width: 720px)")
+            myFunction(x) // Call listener function at run time
+            x.addListener(myFunction) // Attach listener function on state changes
+        // $('.flipbook').turn({
+        //     acceleration:true,
+        //     duration:1300,
+        //     display:'single',
+        //     gradient: true,
+        //      height: height
+
+        // });
+
+    </script>
+</body>
+</html>
