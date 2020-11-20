@@ -88,6 +88,7 @@
     <script type="text/javascript"> 
     
          const height =  $('.page').height()+5;
+       
 
         //  function checkMobile() {
         //  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -131,28 +132,49 @@
         //  })
         function myFunction(x) {
             if (x.matches) { // If media query matches
-                $('.flipbook').turn({
+                
+                
+                if (window.matchMedia("(orientation: portrait)").matches) {
+                // you're in PORTRAIT mode
+                    $('.flipbook').turn({
+                        acceleration:true,
+                        duration:1300,
+                        display:'single',
+                        gradient: true,
+                        height: height
+
+                    })
+                } if (window.matchMedia("(orientation: landscape)").matches) {
+                        $('.flipbook').turn({
+                            acceleration:true,
+                            duration:1300,
+                            display:'double',
+                            gradient: true,
+                            height: height
+                        })
+                    }
+            } else {
+                    $('.flipbook').turn({
                     acceleration:true,
                     duration:1300,
-                    display:'single',
+                    display:'double',
                     gradient: true,
                     height: height
 
                 });
+                        }
+            // function reloadPage() {
+            //     window.location.reload();
+            // }
+            //  reloadPage();
+            //  window.stop;
+        }
 
-            } else {
-                $('.flipbook').turn({
-                acceleration:true,
-                duration:1300,
-                display:'double',
-                gradient: true,
-                height: height
-
-            });
-
-            }
-            }
-             setInterval('autoRefreshPage()', 10000);
+            //     function autoRefreshPage()
+            // {
+            //     window.location = window.location.href;
+            // }
+            // setInterval('autoRefreshPage()', 10000);
 
             var x = window.matchMedia("(max-width: 720px)")
             myFunction(x) // Call listener function at run time
