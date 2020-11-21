@@ -53,12 +53,14 @@
     }
  }
  */
-
+.navbar{
+    padding: 10px;
+}
 
 
  
  body{
-     background-color: #0a0907;
+     background-color: aliceblue;
  }
  .navbar{
      width: 100%;

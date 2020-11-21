@@ -12,15 +12,16 @@
    
 </head>
 <body> 
+    <nav class="navbar navbar-white bg-warning justify-content-center">    
+        <div class="center">   
+            <div class="nav-item">S ' Kepo</div>
+        </div>
+    </nav>
    <div class="container-md">
        <div class="container-fluid">
             <div class="row">
                 <!-- <div class="text-center">     -->
-                        <nav class="navbar navbar-light bg-primary justify-content-center mt-4 ">    
-                            <div class="center">   
-                                <div class="nav-item">S ' Kepo</div>
-                            </div>
-                        </nav>
+                        
                                 
                         <div class="flipbook mt-2" id="flipbook">
                             <div class="page">
@@ -57,29 +58,27 @@
                                 <img src="images/madig-7.jpg" class="img-fluid  mx-auto d-block" alt="">
                             </div>
                         </div>
-                        <div class="nav justify-content-center mt-2">    
-                            <div class="center">   
-                                <button id="first" class="btn btn-light">
-                                <i class="fas fa-angle-double-left"></i>
-                                </button>
-                                <button id="back" name="back" class="btn btn-light">
-                                <i class="fas fa-angle-left"></i>
-                                </button>
-                                <button id="next" name="next" class="btn btn-light">
-                                <i class="fas fa-angle-right"></i>
-                                </button>
-                                <button id="last" name="last" class="btn btn-light">
-                                <i class="fas fa-angle-double-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                       
-                  
-
-                </div>
+                 </div>
             </div>
        </div>
    </div>
+   <div class="nav justify-content-center mt-2">    
+    <div class="center">   
+        <button id="first" class="btn btn-light">
+        <i class="fas fa-angle-double-left"></i>
+        </button>
+        <button id="back" name="back" class="btn btn-light">
+        <i class="fas fa-angle-left"></i>
+        </button>
+        <button id="next" name="next" class="btn btn-light">
+        <i class="fas fa-angle-right"></i>
+        </button>
+        <button id="last" name="last" class="btn btn-light">
+        <i class="fas fa-angle-double-right"></i>
+        </button>
+    </div>
+</div>
+
 
    <script type="text/javascript" src="lib/jquery.js"></script>
    <script type="text/javascript" src="lib/turn.min.js"></script>
@@ -144,13 +143,14 @@
                         height: height
 
                     })
+                    
                 } if (window.matchMedia("(orientation: landscape)").matches) {
                         $('.flipbook').turn({
                             acceleration:true,
                             duration:1300,
                             display:'double',
                             gradient: true,
-                            height: height
+                            height: 450
                         })
                     }
             } else {
@@ -159,7 +159,7 @@
                     duration:1300,
                     display:'double',
                     gradient: true,
-                    height: height
+                    height: 800
 
                 });
                         }
